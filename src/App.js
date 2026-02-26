@@ -2,20 +2,16 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  // State 1: Input එකේ ලියන text එක තියාගන්න
   const [task, setTask] = useState("");
-  // State 2: Task සේරම list එකක් විදිහට තියාගන්න
   const [todoList, setTodoList] = useState([]);
 
-  // Task එකක් add කරන function එක
   const addTask = () => {
     if (task !== "") {
-      setTodoList([...todoList, task]); // පරණ list එකට අලුත් task එක එකතු කරනවා
-      setTask(""); // Input එක ආයෙත් හිස් කරනවා
+      setTodoList([...todoList, task]); 
+      setTask(""); 
     }
   };
 
-  // Task එකක් අයින් කරන function එක
   const deleteTask = (index) => {
     const newList = todoList.filter((_, i) => i !== index);
     setTodoList(newList);
